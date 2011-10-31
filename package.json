@@ -1,7 +1,7 @@
 {
   "name": "utile",
   "description": "Advantageous functions for programming in javascript and node.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
   "contributors": [
     { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }
