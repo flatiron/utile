@@ -1,0 +1,24 @@
+{
+  "name": "utile",
+  "description": "Advantageous functions for programming in javascript and node.js",
+  "version": "0.0.1",
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "contributors": [
+    { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/flatiron/utile.git" 
+  },
+  "dependencies": {
+    "async": "0.1.x",
+    "mkdirp": "0.x.x",
+    "ncp": "0.2.x",
+    "rimraf": "1.x.x"
+  },
+  "devDependencies": {
+    "vows": "0.5.x"
+  },
+  "main": "./lib/index",
+  "engines": { "node": ">= 0.4.0" }
+}
