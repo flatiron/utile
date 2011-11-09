@@ -2,18 +2,6 @@
 
 A drop-in replacement for `util` with some additional advantageous functions
 
-## Installation
-
-### Installing npm (node package manager)
-```
-  curl http://npmjs.org/install.sh | sh
-```
-
-### Installing utile
-```
-  [sudo] npm install utile
-```
-
 ## Motivation
 Javascript is definitely a "batteries not included language" when compared to languages like Ruby or Python. Node.js has a simple utility library which exposes some basic (but important) functionality:
 
@@ -61,6 +49,18 @@ In addition to the methods that are built-in, utile includes a number of commonl
 * `.rimraf`: [A rm -rf util for nodejs][2]
 * `.cpr`: [Asynchronous recursive file copying with Node.js][3]
 
+## Installation
+
+### Installing npm (node package manager)
+```
+  curl http://npmjs.org/install.sh | sh
+```
+
+### Installing utile
+```
+  [sudo] npm install utile
+```
+
 ## Tests
 All tests are written with [vows][4] and should be run with [npm][5]:
 
@@ -70,6 +70,7 @@ All tests are written with [vows][4] and should be run with [npm][5]:
 
 #### Author: [Nodejitsu Inc.](http://www.nodejitsu.com)
 #### Contributors: [Charlie Robbins](http://github.com/indexzero), [Dominic Tarr](http://github.com/dominictarr)
+#### License: MIT
 
 [0]: https://github.com/caolan/async
 [1]: https://github.com/substack/node-mkdirp
