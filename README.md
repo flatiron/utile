@@ -50,7 +50,8 @@ The `utile` modules exposes some simple utility methods:
 * `.mixin(target [source0, source1, ...])`: Copies enumerable properties from `source0 ... sourceN` onto `target` and returns the resulting object.
 * `.clone(obj)`: Shallow clones the specified object.
 * `.capitalize(str)`: Capitalizes the specified `str`.
-* `.randomString(length)`: randomString returns a pseude-random ASCII string (subset) the return value is a string of length ⌈bits/6⌉ of characters from the base64 alphabet.
+* `.randomString(length)`: randomString returns a pseudo-random ASCII string (subset) the return value is a string of length ⌈bits/6⌉ of characters from the base64 alphabet.
+* `.filter(obj, test)`: return an object with the properties that `test` returns true on.
 
 ## Packaged Dependencies 
 In addition to the methods that are built-in, utile includes a number of commonly used dependencies to reduce the number of includes in your package.json. These modules _are not eagerly loaded to be respectful of startup time,_ but instead are lazy-loaded getters on the `utile` object
