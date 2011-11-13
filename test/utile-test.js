@@ -51,6 +51,12 @@ vows.describe('utile').addBatch({
       assert.isTrue(clone.foo);
       assert.isObject(clone.bar);
       assert.notStrictEqual(obj1, clone);
+    },
+    "the createPath() method": function () {
+      var x = {}
+        , r = Math.random()
+      utile.createPath(x, ['a','b','c'], r)
+      assert.equal(x.a.b.c, r)
     }
   }
 }).export(module);
