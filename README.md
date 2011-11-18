@@ -1,4 +1,4 @@
-# utile 
+# utile [![Build Status](https://secure.travis-ci.org/flatiron/utile.png)](http://travis-ci.org/flatiron/utile)
 
 A drop-in replacement for `util` with some additional advantageous functions
 
