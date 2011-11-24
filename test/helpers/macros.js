@@ -14,3 +14,15 @@ macros.assertReadCorrectJson = function (obj) {
   });
 };
 
+macros.assertDirectoryRequired = function (obj) {
+  assert.isObject(obj);
+  assert.deepEqual(obj, {
+    directory: {
+      me: 'directory/index.js'
+    },
+    helloWorld: {
+      me: 'helloWorld.js'
+    }
+  });
+};
+

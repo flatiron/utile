@@ -1,6 +1,7 @@
 var assert = require('assert'),
     path = require('path'),
     vows = require('vows'),
+    macros = require('./helpers/macros'),
     utile = require('../');
 
 var requireFixtures = path.join(__dirname, 'fixtures', 'require-directory');
@@ -9,16 +10,15 @@ vows.describe('utile/require-directory').addBatch({
   'When using utile': {
     'the `requireDir()` function': {
       topic: utile.requireDir(requireFixtures),
-      'should contain all wanted modules': function (obj) {
+      'should contain all wanted modules': macros.assertDirectoryRequired
+    },
+    'the `requireDirLazily()` function': {
+      topic: utile.requireDirLazily(requireFixtures),
+      'should contain all wanted modules': macros.assertDirectoryRequired,
+      'all properties should be getters': function (obj) {
         assert.isObject(obj);
-        assert.deepEqual(obj, {
-          directory: {
-            me: 'directory/index.js'
-          },
-          helloWorld: {
-            me: 'helloWorld.js'
-          }
-        });
+        assert.isTrue(!!obj.__lookupGetter__('directory'));
+        assert.isTrue(!!obj.__lookupGetter__('helloWorld'));
       }
     }
   }
