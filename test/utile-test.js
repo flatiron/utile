@@ -1,5 +1,5 @@
 /*
- * common-test.js: Tests for common utility functions in broadway.
+ * utile-test.js: Tests for `utile` module.
  *
  * (C) 2011, Nodejitsu Inc.
  * MIT LICENSE
@@ -60,3 +60,4 @@ vows.describe('utile').addBatch({
     }
   }
 }).export(module);
+
