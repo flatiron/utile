@@ -1,3 +1,11 @@
+/*
+ * macros.js: Test macros for `utile` module.
+ *
+ * (C) 2011, Nodejitsu Inc.
+ * MIT LICENSE
+ *
+ */
+
 var assert = require('assert');
 
 var macros = exports;
