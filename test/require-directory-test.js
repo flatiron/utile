@@ -1,3 +1,12 @@
+/*
+ * require-directory-test.js: Tests for `requireDir` and `requireDirLazily`
+ * methods.
+ *
+ * (C) 2011, Nodejitsu Inc.
+ * MIT LICENSE
+ *
+ */
+
 var assert = require('assert'),
     path = require('path'),
     vows = require('vows'),
