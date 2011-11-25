@@ -1,5 +1,5 @@
 /*
- * require-directory-test.js: Tests for `requireDir` and `requireDirLazily`
+ * require-directory-test.js: Tests for `requireDir` and `requireDirLazy`
  * methods.
  *
  * (C) 2011, Nodejitsu Inc.
@@ -21,8 +21,8 @@ vows.describe('utile/require-directory').addBatch({
       topic: utile.requireDir(requireFixtures),
       'should contain all wanted modules': macros.assertDirectoryRequired
     },
-    'the `requireDirLazily()` function': {
-      topic: utile.requireDirLazily(requireFixtures),
+    'the `requireDirLazy()` function': {
+      topic: utile.requireDirLazy(requireFixtures),
       'should contain all wanted modules': macros.assertDirectoryRequired,
       'all properties should be getters': function (obj) {
         assert.isObject(obj);
