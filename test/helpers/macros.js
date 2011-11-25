@@ -2,7 +2,7 @@ var assert = require('assert');
 
 var macros = exports;
 
-macros.assertReadCorrectJSON = function (obj) {
+macros.assertReadCorrectJson = function (obj) {
   assert.isObject(obj);
   assert.deepEqual(obj, {
     hello: 'World',
