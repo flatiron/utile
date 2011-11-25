@@ -53,8 +53,9 @@ vows.describe('utile').addBatch({
       assert.notStrictEqual(obj1, clone);
     },
     "the createPath() method": function () {
-      var x = {}
-        , r = Math.random()
+      var x = {}, 
+          r = Math.random();
+          
       utile.createPath(x, ['a','b','c'], r)
       assert.equal(x.a.b.c, r)
     }
