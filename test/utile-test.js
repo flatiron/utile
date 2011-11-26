@@ -24,6 +24,9 @@ obj2 = {
   baz: true,
   buzz: 'buzz' 
 };
+obj2.__defineGetter__('bazz', function () {
+  return 'bazz';
+});
  
 vows.describe('utile').addBatch({
   "When using utile": {
@@ -47,6 +50,8 @@ vows.describe('utile').addBatch({
       assert.isObject(mixed.bar);
       assert.isTrue(mixed.baz);
       assert.isString(mixed.buzz);
+      assert.isTrue(!!mixed.__lookupGetter__('bazz'));
+      assert.isString(mixed.bazz);
     },
     "the clone() method": function () {
       var clone = utile.clone(obj1);
