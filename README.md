@@ -25,11 +25,13 @@ $ node
 
 utile.async                 utile.capitalize            utile.clone                 utile.cpr                   utile.createPath            utile.debug
 utile.each                  utile.error                 utile.exec                  utile.file                  utile.filter                utile.find
-utile.inherits              utile.inspect               utile.log                   utile.mixin                 utile.mkdirp                utile.p
-utile.path                  utile.print                 utile.pump                  utile.puts                  utile.randomString          utile.rimraf
+utile.inherits              utile.log                   utile.mixin                 utile.mkdirp                utile.p                     utile.path
+utile.print                 utile.pump                  utile.puts                  utile.randomString          utile.rimraf
 ```
 
 As you can see all of the original methods from `util` are there, but there are several new methods specific to `utile`. A note about implementation: _no node.js native modules are modified by utile, it simply copies those methods._
+
+**Remark:** The `util.inspect` method is not exposed in `utile` [until this issue is resolved](https://github.com/joyent/node/issues/2225).
 
 ## Methods
 The `utile` modules exposes some simple utility methods:
@@ -77,4 +79,4 @@ All tests are written with [vows][4] and should be run with [npm][5]:
 [2]: https://github.com/isaacs/rimraf
 [3]: https://github.com/avianflu/ncp
 [4]: https://vowsjs.org
-[5]: https://npmjs.or
+[5]: https://npmjs.org
