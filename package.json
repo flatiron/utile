@@ -25,5 +25,5 @@
     "test": "vows --spec --isolate"
   },
   "main": "./lib/index",
-  "engines": { "node": ">= 0.4.0" }
+  "engines": { "node": ">= 0.6.4" }
 }
