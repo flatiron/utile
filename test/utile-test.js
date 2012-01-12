@@ -32,9 +32,7 @@ vows.describe('utile').addBatch({
   "When using utile": {
     "it should have the same methods as the `util` module": function () {
       Object.keys(require('util')).forEach(function (fn) {
-        if (fn !== 'inspect') {
-          assert.isFunction(utile[fn]);
-        }
+        assert.isFunction(utile[fn]);
       });
     },
     "it should have the correct methods defined": function () {
