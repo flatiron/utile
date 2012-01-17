@@ -31,8 +31,6 @@ utile.print                 utile.pump                  utile.puts              
 
 As you can see all of the original methods from `util` are there, but there are several new methods specific to `utile`. A note about implementation: _no node.js native modules are modified by utile, it simply copies those methods._
 
-**Remark:** The `util.inspect` method is not exposed in `utile` [until this issue is resolved](https://github.com/joyent/node/issues/2225).
-
 ## Methods
 The `utile` modules exposes some simple utility methods:
 
