@@ -27,6 +27,12 @@ obj2 = {
 obj2.__defineGetter__('bazz', function () {
   return 'bazz';
 });
+obj2.__defineSetter__('bazz', function() {
+  return 'bazz';
+});
+obj2.__defineSetter__('wat', function () {
+  return 'wat';
+});
  
 vows.describe('utile').addBatch({
   "When using utile": {
@@ -49,6 +55,8 @@ vows.describe('utile').addBatch({
       assert.isTrue(mixed.baz);
       assert.isString(mixed.buzz);
       assert.isTrue(!!mixed.__lookupGetter__('bazz'));
+      assert.isTrue(!!mixed.__lookupSetter__('bazz'));
+      assert.isTrue(!!mixed.__lookupSetter__('wat'));
       assert.isString(mixed.bazz);
     },
     "the clone() method": function () {
