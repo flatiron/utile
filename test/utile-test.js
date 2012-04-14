@@ -5,7 +5,7 @@
  * MIT LICENSE
  *
  */
- 
+
 var assert = require('assert'),
     vows = require('vows'),
     utile = require('../lib');
@@ -22,7 +22,7 @@ obj1 = {
 
 obj2 = {
   baz: true,
-  buzz: 'buzz' 
+  buzz: 'buzz'
 };
 obj2.__defineGetter__('bazz', function () {
   return 'bazz';
@@ -33,7 +33,7 @@ obj2.__defineSetter__('bazz', function() {
 obj2.__defineSetter__('wat', function () {
   return 'wat';
 });
- 
+
 vows.describe('utile').addBatch({
   "When using utile": {
     "it should have the same methods as the `util` module": function () {
@@ -66,9 +66,9 @@ vows.describe('utile').addBatch({
       assert.notStrictEqual(obj1, clone);
     },
     "the createPath() method": function () {
-      var x = {}, 
+      var x = {},
           r = Math.random();
-          
+
       utile.createPath(x, ['a','b','c'], r)
       assert.equal(x.a.b.c, r)
     }

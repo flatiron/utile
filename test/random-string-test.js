@@ -4,7 +4,7 @@
  * (C) 2011, Nodejitsu Inc.
  *
  */
- 
+
 var assert = require('assert'),
     vows = require('vows'),
     utile = require('../lib');

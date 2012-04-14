@@ -5,7 +5,7 @@
  * MIT LICENSE
  *
  */
- 
+
 var assert = require('assert'),
     path = require('path'),
     vows = require('vows'),
