@@ -23,12 +23,12 @@ vows.describe('utile/require-directory').addBatch({
     },
     'the `requireDirLazy()` function': {
       topic: utile.requireDirLazy(requireFixtures),
-      'should contain all wanted modules': macros.assertDirectoryRequired,
       'all properties should be getters': function (obj) {
         assert.isObject(obj);
         assert.isTrue(!!obj.__lookupGetter__('directory'));
         assert.isTrue(!!obj.__lookupGetter__('helloWorld'));
-      }
+      },
+      'should contain all wanted modules': macros.assertDirectoryRequired
     }
   }
 }).export(module);
