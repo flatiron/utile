@@ -49,6 +49,7 @@ The `utile` modules exposes some simple utility methods:
 In addition to the methods that are built-in, utile includes a number of commonly used dependencies to reduce the number of includes in your package.json. These modules _are not eagerly loaded to be respectful of startup time,_ but instead are lazy-loaded getters on the `utile` object
 
 * `.async`: [Async utilities for node and the browser][0]
+* `.inflect`: [Customizable inflections for node.js][6]
 * `.mkdirp`: [Recursively mkdir, like mkdir -p, but in node.js][1]
 * `.rimraf`: [A rm -rf util for nodejs][2]
 * `.cpr`: [Asynchronous recursive file copying with Node.js][3]
@@ -82,3 +83,4 @@ All tests are written with [vows][4] and should be run with [npm][5]:
 [3]: https://github.com/avianflu/ncp
 [4]: https://vowsjs.org
 [5]: https://npmjs.org
+[6]: https://github.com/pksunkara/inflect
