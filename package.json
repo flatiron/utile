@@ -2,11 +2,9 @@
   "name": "utile",
   "description": "A drop-in replacement for `util` with some additional advantageous functions",
   "version": "0.0.10",
-  "author": "Nodejitsu Inc <info@nodejitsu.com>",
-  "contributors": [
-    { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" },
-    { "name": "Dominic Tarr", "email": "dominic@nodejitsu.com" },
-    { "name": "Maciej Malecki", "email": "maciej@nodejitsu.com" }
+  "author": "Nodejitsu Inc. <info@nodejitsu.com>",
+  "maintainers": [
+    "indexzero <charlie@nodejitsu.com>"
   ],
   "repository": {
     "type": "git",
@@ -25,5 +23,8 @@
     "test": "vows --spec --isolate"
   },
   "main": "./lib/index",
-  "engines": { "node": ">= 0.6.4" }
+  "engines": {
+    "node": ">= 0.6.4"
+  }
 }
+
