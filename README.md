@@ -26,7 +26,8 @@ $ node
 utile.async                 utile.capitalize            utile.clone                 utile.cpr                   utile.createPath            utile.debug
 utile.each                  utile.error                 utile.exec                  utile.file                  utile.filter                utile.find
 utile.inherits              utile.log                   utile.mixin                 utile.mkdirp                utile.p                     utile.path
-utile.print                 utile.pump                  utile.puts                  utile.randomString          utile.rimraf
+utile.print                 utile.pump                  utile.puts                  utile.randomString          utile.requireDir            uile.requireDirLazy
+utile.rimraf
 ```
 
 As you can see all of the original methods from `util` are there, but there are several new methods specific to `utile`. A note about implementation: _no node.js native modules are modified by utile, it simply copies those methods._
