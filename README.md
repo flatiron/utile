@@ -5,7 +5,7 @@ A drop-in replacement for `util` with some additional advantageous functions
 ## Motivation
 Javascript is definitely a "batteries not included language" when compared to languages like Ruby or Python. Node.js has a simple utility library which exposes some basic (but important) functionality:
 
-``` 
+```
 $ node
 > var util = require('util');
 > util.
@@ -40,8 +40,10 @@ The `utile` modules exposes some simple utility methods:
 * `.capitalize(str)`: Capitalizes the specified `str`.
 * `.randomString(length)`: randomString returns a pseudo-random ASCII string (subset) the return value is a string of length ⌈bits/6⌉ of characters from the base64 alphabet.
 * `.filter(obj, test)`: return an object with the properties that `test` returns true on.
+* `.requireDir(directory)`: Requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values being return values of `require(filename)`.
+* `.requireDirLazy(directoy)`: Lazily requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values (getters) being return values of `require(filename)`.
 
-## Packaged Dependencies 
+## Packaged Dependencies
 In addition to the methods that are built-in, utile includes a number of commonly used dependencies to reduce the number of includes in your package.json. These modules _are not eagerly loaded to be respectful of startup time,_ but instead are lazy-loaded getters on the `utile` object
 
 * `.async`: [Async utilities for node and the browser][0]
