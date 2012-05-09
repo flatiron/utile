@@ -3,7 +3,7 @@ var utile = require('../lib');
 //
 // with contract comments
 //
-var myFN = function(/* a, b, c, callback */) {
+var myFN = function (/* a, b, c, callback */) {
   var args = utile.args(arguments);
   console.log(args);
 };
