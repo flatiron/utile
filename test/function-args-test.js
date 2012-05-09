@@ -45,7 +45,7 @@ vows.describe('utile/args').addBatch({
     'should return an array with three items': function (err, result) {
       assert.isNull(err);
       assert.isArray(result.array);
-      assert(3, result.array.length);
+      assert.equal(3, result.array.length);
     },
     'should return lookup helpers': function (err, result) {
       assert.isNull(err);
@@ -68,12 +68,12 @@ vows.describe('utile/args').addBatch({
     'should return an array with three items': function (err, result) {
       assert.isNull(err);
       assert.isArray(result.array);
-      assert(3, result.array.length);
+      assert.equal(3, result.array.length);
     },
     'should return lookup helpers': function (err, result) {
       assert.isNull(err);
       assert.isObject(result);
-      assert(result.last, "c");
+      assert.equal(result.last, "c");
       assert.isFunction(result.callback);
       assert.isFunction(result.cb);
     },
