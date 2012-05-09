@@ -82,6 +82,33 @@ vows.describe('utile/args').addBatch({
       assert.equal(result.y, "b");
       assert.equal(result.z, "c");
     }
+  },
+  'util.args() with disabled contracts': {
+    topic: function() {
+      var that = this;
+      (function (/* x, y, z, callback */) {
+        var result = utile.args(arguments, false);
+        that.callback(null, result);
+      })("a", "b", "c", function(){
+        return 'ok';
+      })
+    },
+    'should return an array with three items': function (err, result) {
+      assert.isNull(err);
+      assert.isArray(result.array);
+      assert.equal(3, result.array.length);
+    },
+    'should return lookup helpers': function (err, result) {
+      assert.isNull(err);
+      assert.isObject(result);
+      assert.equal(result.last, "c");
+      assert.isFunction(result.callback);
+      assert.isFunction(result.cb);
+    },
+    'should return merged contract object': function (err, result) {
+      assert.isUndefined(result.x);
+      assert.isUndefined(result.y);
+      assert.isUndefined(result.z);
+    }
   }
 }).export(module);
-
