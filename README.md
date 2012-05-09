@@ -41,6 +41,7 @@ The `utile` modules exposes some simple utility methods:
 * `.capitalize(str)`: Capitalizes the specified `str`.
 * `.randomString(length)`: randomString returns a pseudo-random ASCII string (subset) the return value is a string of length ⌈bits/6⌉ of characters from the base64 alphabet.
 * `.filter(obj, test)`: return an object with the properties that `test` returns true on.
+* `.args(arguments)`: Converts function arguments into actual array with special `callback`, `cb`, `array`, and `last` properties. Also supports *optional* argument contracts. See [the example](https://github.com/flatiron/utile/blob/master/examples/utile-args.js) for more details.
 * `.requireDir(directory)`: Requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values being return values of `require(filename)`.
 * `.requireDirLazy(directoy)`: Lazily requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values (getters) being return values of `require(filename)`.
 
