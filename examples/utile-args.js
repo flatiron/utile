@@ -1,5 +1,8 @@
 var utile = require('../lib');
 
+//
+// with contract comments
+//
 var myFN = function(/* a, b, c, callback */) {
   var args = utile.args(arguments);
   console.log(args);
@@ -21,6 +24,30 @@ myFN("x", "y", "z", function(){
   last: 'z' }
 
 */
+
+//
+// wihout any special comment contracts
+//
+var noCommentFN = function() {
+  var args = utile.args(arguments);
+  console.log(args);
+};
+
+noCommentFN("x", "y", "z", function() {
+  return 'ok';
+})
+
+/*
+
+  OUTPUTS
+
+  { array: [ 'x', 'y', 'z' ],
+    callback: [Function],
+    cb: [Function],
+    last: 'z' }
+*/
+
+/* additional variations of contract comment parsing */
 
 myFN(function(){ 
   return 'ok';
