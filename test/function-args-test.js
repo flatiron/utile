@@ -21,53 +21,84 @@ vows.describe('utile/args').addBatch({
       },
     }
   },
-  'util.args() with no arguments': {
-    topic: function () {
-      var result = utile.args();
-      this.callback(null, result);
+  'utile.rargs()': {
+    'with no arguments': {
+      topic: utile.rargs(),
+      'should return an empty object': function (result) {
+        assert.isArray(result);
+        assert.lengthOf(result, 0);
+      }
     },
-    'should return an empty object': function (err, result) {
-      assert.isNull(err);
-      assert.isUndefined(result.callback);
-      assert.isArray(result);
+    'with simple arguments': {
+      topic: function () {
+        return (function () {
+          return utile.rargs(arguments);
+        })('a', 'b', 'c');
+      },
+      'should return an array with three items': function (result) {
+        assert.isArray(result);
+        assert.equal(3, result.length);
+        assert.equal(result[0], 'a');
+        assert.equal(result[1], 'b');
+        assert.equal(result[2], 'c');
+      }
+    },
+    'with a simple slice': {
+      topic: function () {
+        return (function () {
+          return utile.rargs(arguments, 1);
+        })('a', 'b', 'c');
+      },
+      'should return an array with three items': function (result) {
+        assert.isArray(result);
+        assert.equal(2, result.length);
+        assert.equal(result[0], 'b');
+        assert.equal(result[1], 'c');
+      }
     }
   },
-  'util.args() with simple arguments': {
-    topic: function () {
-      var that = this;
-      (function () {
-        var result = utile.args(arguments);
-        that.callback(null, result);
-      })('a', 'b', 'c', function () { 
-        return 'ok';
-      })
+  'utile.args()': {
+    'with no arguments': {
+      topic: utile.args(),
+      'should return an empty Array': function (result) {
+        assert.isUndefined(result.callback);
+        assert.isArray(result);
+        assert.lengthOf(result, 0);
+      }
     },
-    'should return an array with three items': function (err, result) {
-      assert.isNull(err);
-      assert.isArray(result);
-      assert.equal(3, result.length);
-      assert.equal(result[0], 'a');
-      assert.equal(result[1], 'b');
-      assert.equal(result[2], 'c');
-      
-      //
-      // Ensure that the Array returned
-      // by `utile.args()` enumerates correctly
-      //
-      var length = 0;
-      result.forEach(function (item) {
-        length++;
-      });
-      
-      assert.equal(length, 3);
-    },
-    'should return lookup helpers': function (err, result) {
-      assert.isNull(err);
-      assert.isArray(result);
-      assert.equal(result.first, 'a');
-      assert.equal(result.last, 'c');
-      assert.isFunction(result.callback);
-      assert.isFunction(result.cb);
+    'with simple arguments': {
+      topic: function () {
+        return (function () {
+          return utile.args(arguments);
+        })('a', 'b', 'c', function () { 
+          return 'ok';
+        });
+      },
+      'should return an array with three items': function (result) {
+        assert.isArray(result);
+        assert.equal(3, result.length);
+        assert.equal(result[0], 'a');
+        assert.equal(result[1], 'b');
+        assert.equal(result[2], 'c');
+
+        //
+        // Ensure that the Array returned
+        // by `utile.args()` enumerates correctly
+        //
+        var length = 0;
+        result.forEach(function (item) {
+          length++;
+        });
+
+        assert.equal(length, 3);
+      },
+      'should return lookup helpers': function (result) {
+        assert.isArray(result);
+        assert.equal(result.first, 'a');
+        assert.equal(result.last, 'c');
+        assert.isFunction(result.callback);
+        assert.isFunction(result.cb);
+      }
     }
   }
 }).export(module);
