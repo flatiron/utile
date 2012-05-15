@@ -22,7 +22,7 @@ vows.describe('utile/args').addBatch({
     }
   },
   'util.args() with no arguments': {
-    topic: function(){
+    topic: function () {
       var result = utile.args();
       this.callback(null, result);
     },
@@ -33,12 +33,12 @@ vows.describe('utile/args').addBatch({
     }
   },
   'util.args() with simple arguments': {
-    topic: function() {
+    topic: function () {
       var that = this;
-      (function(){
+      (function () {
         var result = utile.args(arguments);
         that.callback(null, result);
-      })("a", "b", "c", function(){ 
+      })("a", "b", "c", function () { 
         return 'ok';
       })
     },

@@ -24,12 +24,15 @@ obj2 = {
   baz: true,
   buzz: 'buzz'
 };
+
 obj2.__defineGetter__('bazz', function () {
   return 'bazz';
 });
-obj2.__defineSetter__('bazz', function() {
+
+obj2.__defineSetter__('bazz', function () {
   return 'bazz';
 });
+
 obj2.__defineSetter__('wat', function () {
   return 'wat';
 });
