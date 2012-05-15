@@ -29,7 +29,7 @@ vows.describe('utile/args').addBatch({
     'should return an empty object': function (err, result) {
       assert.isNull(err);
       assert.isUndefined(result.callback);
-      assert.isObject(result);
+      assert.isArray(result);
     }
   },
   'util.args() with simple arguments': {
@@ -38,19 +38,34 @@ vows.describe('utile/args').addBatch({
       (function () {
         var result = utile.args(arguments);
         that.callback(null, result);
-      })("a", "b", "c", function () { 
+      })('a', 'b', 'c', function () { 
         return 'ok';
       })
     },
     'should return an array with three items': function (err, result) {
       assert.isNull(err);
-      assert.isArray(result.array);
-      assert.equal(3, result.array.length);
+      assert.isArray(result);
+      assert.equal(3, result.length);
+      assert.equal(result[0], 'a');
+      assert.equal(result[1], 'b');
+      assert.equal(result[2], 'c');
+      
+      //
+      // Ensure that the Array returned
+      // by `utile.args()` enumerates correctly
+      //
+      var length = 0;
+      result.forEach(function (item) {
+        length++;
+      });
+      
+      assert.equal(length, 3);
     },
     'should return lookup helpers': function (err, result) {
       assert.isNull(err);
-      assert.isObject(result);
-      assert.equal(result.last, "c");
+      assert.isArray(result);
+      assert.equal(result.first, 'a');
+      assert.equal(result.last, 'c');
       assert.isFunction(result.callback);
       assert.isFunction(result.cb);
     }
