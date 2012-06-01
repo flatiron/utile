@@ -74,6 +74,11 @@ vows.describe('utile').addBatch({
 
       utile.createPath(x, ['a','b','c'], r)
       assert.equal(x.a.b.c, r)
+    },
+    "the capitalize() method": function () {
+      assert.isFunction(utile.capitalize);
+      assert.equal(utile.capitalize('bullet'), 'Bullet');
+      assert.equal(utile.capitalize('bullet_train'), 'BulletTrain');
     }
   }
 }).export(module);

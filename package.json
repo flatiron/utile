@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "async": "0.1.x",
+    "i": "0.3.x",
     "mkdirp": "0.x.x",
     "ncp": "0.2.x",
     "rimraf": "1.x.x"
