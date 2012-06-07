@@ -21,7 +21,7 @@
     "vows": "0.6.x"
   },
   "scripts": {
-    "test": "vows --spec --isolate"
+    "test": "vows --spec"
   },
   "main": "./lib/index",
   "engines": {
