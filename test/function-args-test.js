@@ -70,7 +70,7 @@ vows.describe('utile/args').addBatch({
       topic: function () {
         return (function () {
           return utile.args(arguments);
-        })('a', 'b', 'c', function () { 
+        })('a', 'b', 'c', function () {
           return 'ok';
         });
       },
