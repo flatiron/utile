@@ -79,7 +79,12 @@ vows.describe('utile').addBatch({
       assert.isFunction(utile.capitalize);
       assert.equal(utile.capitalize('bullet'), 'Bullet');
       assert.equal(utile.capitalize('bullet_train'), 'BulletTrain');
-    }
+    },
+    "the escapeRegExp() method": function () {
+      var ans = "\\/path\\/to\\/resource\\.html\\?search=query";
+      assert.isFunction(utile.escapeRegExp);
+      assert.equal(utile.escapeRegExp('/path/to/resource.html?search=query'), ans);
+    },
   }
 }).export(module);
 
