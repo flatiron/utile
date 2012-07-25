@@ -85,6 +85,34 @@ vows.describe('utile').addBatch({
       assert.isFunction(utile.escapeRegExp);
       assert.equal(utile.escapeRegExp('/path/to/resource.html?search=query'), ans);
     },
+    "the underscoreToCamel() method": function () {
+      var obj = utile.underscoreToCamel({
+        key_with_underscore: {
+          andNested: 'values',
+          several: [1, 2, 3],
+          nested_underscores: true
+        },
+        just_one: 'underscore'
+      });
+
+      assert.isObject(obj.keyWithUnderscore);
+      assert.isString(obj.justOne);
+      assert.isTrue(obj.keyWithUnderscore.nestedUnderscores);
+    },
+    "the camelToUnderscore() method": function () {
+      var obj = utile.camelToUnderscore({
+        keyWithCamel: {
+          andNested: 'values',
+          several: [1, 2, 3],
+          nestedCamel: true
+        },
+        justOne: 'camel'
+      });
+
+      assert.isObject(obj.key_with_camel);
+      assert.isString(obj.just_one);
+      assert.isTrue(obj.key_with_camel.nested_camel);
+    }
   }
 }).export(module);
 
