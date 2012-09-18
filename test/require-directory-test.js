@@ -25,8 +25,8 @@ vows.describe('utile/require-directory').addBatch({
       topic: utile.requireDirLazy(requireFixtures),
       'all properties should be getters': function (obj) {
         assert.isObject(obj);
-        assert.isTrue(!!obj.__lookupGetter__('directory'));
-        assert.isTrue(!!obj.__lookupGetter__('helloWorld'));
+        assert.isTrue(!!Object.getOwnPropertyDescriptor(obj, 'directory').get);
+        assert.isTrue(!!Object.getOwnPropertyDescriptor(obj, 'helloWorld').get);
       },
       'should contain all wanted modules': macros.assertDirectoryRequired
     }
