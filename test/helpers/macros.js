@@ -6,13 +6,14 @@
  *
  */
 
-var assert = require('assert');
+var assert = require('assert'),
+    utile = require('../../lib');
 
 var macros = exports;
 
 macros.assertReadCorrectJson = function (obj) {
   assert.isObject(obj);
-  assert.deepEqual(obj, {
+  utile.deepEqual(obj, {
     hello: 'World',
     'I am': ['the utile module'],
     thisMakesMe: {
@@ -24,7 +25,7 @@ macros.assertReadCorrectJson = function (obj) {
 
 macros.assertDirectoryRequired = function (obj) {
   assert.isObject(obj);
-  assert.deepEqual(obj, {
+  utile.deepEqual(obj, {
     directory: {
       me: 'directory/index.js'
     },
