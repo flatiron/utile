@@ -25,16 +25,24 @@ obj2 = {
   buzz: 'buzz'
 };
 
-obj2.__defineGetter__('bazz', function () {
-  return 'bazz';
-});
+Object.defineProperties(obj2, {
 
-obj2.__defineSetter__('bazz', function () {
-  return 'bazz';
-});
+  'bazz': {
+    get: function() {
+      return 'bazz';
+    },
 
-obj2.__defineSetter__('wat', function () {
-  return 'wat';
+    set: function() {
+      return 'bazz';
+    }
+  },
+
+  'wat': {
+    set: function() {
+      return 'wat';
+    }
+  }
+
 });
 
 vows.describe('utile').addBatch({
@@ -57,9 +65,9 @@ vows.describe('utile').addBatch({
       assert.isObject(mixed.bar);
       assert.isTrue(mixed.baz);
       assert.isString(mixed.buzz);
-      assert.isTrue(!!mixed.__lookupGetter__('bazz'));
-      assert.isTrue(!!mixed.__lookupSetter__('bazz'));
-      assert.isTrue(!!mixed.__lookupSetter__('wat'));
+      assert.isTrue(!!Object.getOwnPropertyDescriptor(mixed, 'bazz').get);
+      assert.isTrue(!!Object.getOwnPropertyDescriptor(mixed, 'bazz').set);
+      assert.isTrue(!!Object.getOwnPropertyDescriptor(mixed, 'wat').set);
       assert.isString(mixed.bazz);
     },
     "the clone() method": function () {
