@@ -43,7 +43,8 @@ The `utile` modules exposes some simple utility methods:
 * `.filter(obj, test)`: return an object with the properties that `test` returns true on.
 * `.args(arguments)`: Converts function arguments into actual array with special `callback`, `cb`, `array`, and `last` properties. Also supports *optional* argument contracts. See [the example](https://github.com/flatiron/utile/blob/master/examples/utile-args.js) for more details.
 * `.requireDir(directory)`: Requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values being return values of `require(filename)`.
-* `.requireDirLazy(directoy)`: Lazily requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values (getters) being return values of `require(filename)`.
+* `.requireDirLazy(directory)`: Lazily requires all files and directories from `directory`, returning an object with keys being filenames (without trailing `.js`) and respective values (getters) being return values of `require(filename)`.
+* `.format([string] text, [array] formats, [array] replacements)`: Replace `formats` in `text` with `replacements`. This will fall back to the original `util.format` command if it is called improperly.
 
 ## Packaged Dependencies
 In addition to the methods that are built-in, utile includes a number of commonly used dependencies to reduce the number of includes in your package.json. These modules _are not eagerly loaded to be respectful of startup time,_ but instead are lazy-loaded getters on the `utile` object
