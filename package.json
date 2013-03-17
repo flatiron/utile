@@ -16,7 +16,7 @@
     "i": "0.3.x",
     "mkdirp": "0.x.x",
     "ncp": "0.2.x",
-    "rimraf": "1.x.x"
+    "rimraf": "2.x.x"
   },
   "devDependencies": {
     "vows": "0.6.x"
