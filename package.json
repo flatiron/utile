@@ -11,11 +11,11 @@
     "url": "http://github.com/flatiron/utile.git"
   },
   "dependencies": {
-    "async": "0.1.x",
+    "async": "~0.2.9",
     "deep-equal": "*",
     "i": "0.3.x",
     "mkdirp": "0.x.x",
-    "ncp": "0.2.x",
+    "ncp": "0.4.x",
     "rimraf": "2.x.x"
   },
   "devDependencies": {
