@@ -1,7 +1,7 @@
 /*
  * file-test.js: Tests for `utile.file` module.
  *
- * (C) 2011, Nodejitsu Inc.
+ * (C) 2011, Charlie Robbins & the Contributors
  * MIT LICENSE
  *
  */

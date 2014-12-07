@@ -1,7 +1,7 @@
 /*
  * utile-test.js: Tests for `utile` module.
  *
- * (C) 2011, Nodejitsu Inc.
+ * (C) 2011, Charlie Robbins & the Contributors
  * MIT LICENSE
  *
  */

@@ -2,7 +2,7 @@
  * require-directory-test.js: Tests for `requireDir` and `requireDirLazy`
  * methods.
  *
- * (C) 2011, Nodejitsu Inc.
+ * (C) 2011, Charlie Robbins & the Contributors
  * MIT LICENSE
  *
  */

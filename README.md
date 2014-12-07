@@ -74,8 +74,8 @@ All tests are written with [vows][4] and should be run with [npm][5]:
   $ npm test
 ```
 
-#### Author: [Nodejitsu Inc.](http://www.nodejitsu.com)
-#### Contributors: [Charlie Robbins](http://github.com/indexzero), [Dominic Tarr](http://github.com/dominictarr)
+#### Author: [Charlie Robbins](http://github.com/indexzero)
+#### Contributors: [Dominic Tarr](http://github.com/dominictarr), [Marak Squires](https://github.com/marak)
 #### License: MIT
 
 [0]: https://github.com/caolan/async

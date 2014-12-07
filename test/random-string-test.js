@@ -1,7 +1,7 @@
 /*
  * common-test.js : testing common.js for expected functionality
  *
- * (C) 2011, Nodejitsu Inc.
+ * (C) 2011, Charlie Robbins & the Contributors
  *
  */
 

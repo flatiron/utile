@@ -1,7 +1,7 @@
 /*
  * format-test.js: Tests for `utile.format` module.
  *
- * (C) 2011, Nodejitsu Inc.
+ * (C) 2011, Charlie Robbins & the Contributors
  * MIT LICENSE
  *
  */

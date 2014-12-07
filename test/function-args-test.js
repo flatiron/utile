@@ -1,7 +1,7 @@
 /*
  * function-args-test.js: Tests for `args` method
  *
- * (C) 2012, Nodejitsu Inc.
+ * (C) 2011, Charlie Robbins & the Contributors
  * MIT LICENSE
  *
  */
