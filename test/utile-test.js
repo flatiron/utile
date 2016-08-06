@@ -120,7 +120,25 @@ vows.describe('utile').addBatch({
       assert.isObject(obj.key_with_camel);
       assert.isString(obj.just_one);
       assert.isTrue(obj.key_with_camel.nested_camel);
-    }
+    },
+      "the proxy() method": {
+	  "should have the right context": function() {
+	      var fn = utile.proxy(function() {
+		  assert.isObject(this);
+		  assert.deepEqual(this, { test:'ing' });
+	      }, { test:'ing' });
+
+	      fn();
+	  },
+	  "should have the right arguments": function() {
+	      var fn = utile.proxy(function(one, two) {
+		  assert.equal(one, 'one');
+		  assert.equal(two, 'two');
+	      }, {}, 'one');
+
+	      fn('two');
+	  }
+      }
   }
 }).export(module);
 
